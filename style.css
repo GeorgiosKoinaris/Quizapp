@@ -1,0 +1,9 @@
+body {
+    margin: 0;
+    }
+
+.bg {
+    background-image: url(img/ringbg.jpg);
+    background-position: bottom;
+    background-size: cover;
+    }
