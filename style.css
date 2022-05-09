@@ -23,3 +23,12 @@ body {
 .card {
     max-width: 900px;
 }
+
+.categoriesCont {
+    display: flex;
+    justify-content: center;
+}
+
+.categories {
+    display: block;
+}
