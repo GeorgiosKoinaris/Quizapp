@@ -3,13 +3,35 @@ body {
 }
 
 .bg {
-    background-image: url(img/ringbg.jpg);
-    background-size: cover;
+    /* background-color: black; */
+    background-color: black;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
+
+.bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    opacity: 0.8;
+    background-image: url(img/ringbg.jpg);
+    background-size: cover;
+}
+
+
+/***********general classes**************/
+
+.pointer {
+    cursor: pointer;
+}
+
+
+/****************question card****************/
 
 .question-footer {
     display: flex;
@@ -20,8 +42,29 @@ body {
     cursor: pointer;
 }
 
+.card-title {
+    margin-bottom: 4.5rem;
+    text-align: center;
+}
+
 .card {
     max-width: 900px;
+    background-color: transparent;
+    color: red;
+    border: 2px solid rgb(255, 215, 0, 0.4);
+    text-align: center;
+}
+
+.q-container {
+    min-width: 650px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.bg-container {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 .categoriesCont {
@@ -31,4 +74,22 @@ body {
 
 .categories {
     display: block;
+    position: relative;
+}
+
+.answer {
+    font-size: 17px;
+}
+
+.answer:hover {
+    background-color: rgba(255, 215, 0, 0.3);
+}
+
+
+/*********Media***************/
+
+@media (max-width: 767px) {
+    .categoriesCont {
+        border-bottom: 2px dotted rgb(255, 215, 0, 0.4);
+    }
 }
