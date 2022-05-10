@@ -90,6 +90,6 @@ body {
 
 @media (max-width: 767px) {
     .categoriesCont {
-        border-bottom: 2px dotted rgb(255, 215, 0, 0.4);
+        border-bottom: 2px solid rgb(255, 215, 0, 0.4);
     }
 }
