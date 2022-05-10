@@ -125,5 +125,8 @@ let questions = [{
         'answer_3': 'Die Vernichtung des Ringes',
         'answer_4': 'Der Beginn des neuen Zeitalters',
         'right_answer': 2
-    },
-]
+    }
+];
+
+
+function init() {}
