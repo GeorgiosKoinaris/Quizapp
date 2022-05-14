@@ -24,6 +24,10 @@ body {
 
 /***********general classes**************/
 
+.d-flex {
+    display: flex;
+}
+
 .pointer {
     cursor: pointer;
 }
@@ -78,6 +82,15 @@ body {
 .categoriesCont {
     display: flex;
     justify-content: center;
+}
+
+.category {
+    width: 16px;
+    padding-right: 2px;
+}
+
+.category img {
+    width: 100%;
 }
 
 .categories {

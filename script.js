@@ -167,11 +167,20 @@ function showQuestion() {
         document.getElementById('answer_2').innerHTML = question['answer_2'];
         document.getElementById('answer_3').innerHTML = question['answer_3'];
         document.getElementById('answer_4').innerHTML = question['answer_4'];
+        selectCategory();
     }
 }
 
 function selectCategory() {
+    let question = questions[currentQuestion];
+    document.getElementById('category-2').innerHTML = '';
+    document.getElementById('category-1').innerHTML = '';
 
+    if (question['category'] == 'general') {
+        document.getElementById('category-1').innerHTML = `<img src="img/arrowRed.png">`
+    } else {
+        document.getElementById('category-2').innerHTML = `<img src="img/arrowRed.png">`
+    }
 }
 
 
