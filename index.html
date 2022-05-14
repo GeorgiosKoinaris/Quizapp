@@ -14,18 +14,26 @@
 <body class="bg" onload="init()">
 
     <div class="card mb-3 bg-container">
-        <div class="row g-0 q-container">
+
+        <!--------------------end screen------------------------->
+        <div id="end-screen" style="display:none">
+            <div>Quiz beendet</div>
+            <div>Eventuell Bild</div>
+            <div>Du hast <b>XXX</b> von <b>XXX</b> Fragen richtig beantwortet</div>
+
+
+        </div>
+
+
+        <!--------------------question body----------------------->
+        <div class="row g-0 q-container" id="question-body">
             <div class="col-md-4">
 
                 <div class="categoriesCont">
 
                     <ul class="p-0">
-                        <li class="categories mb-3 mt-3"><b>Kategorie 1</b>
-                        </li>
-                        <li class="categories mb-3"><b>Kategorie 2</b></li>
-                        <li class="categories mb-3"><b>Kategorie 3</b></li>
-                        <li class="categories"><b>Kategorie 4</b>
-                        </li>
+                        <li class="categories mb-3 mt-3"><b>Allgemein</b></li>
+                        <li class="categories mb-3"><b>Produktion</b></li>
                     </ul>
 
                 </div>
@@ -33,32 +41,35 @@
 
             <div class="col-md-8">
                 <div class="card-body">
-                    <h5 class="card-title">Frage</h5>
+                    <h5 class="card-title" id="questionText">Frage</h5>
 
                     <div class="card mb-3 pointer">
-                        <div class="card-body answer">
+                        <div class="card-body answer" id="answer_1" onclick="answer('answer_1')">
                             Antwort
                         </div>
                     </div>
                     <div class="card mb-3 pointer">
-                        <div class="card-body answer">
+                        <div class="card-body answer" id="answer_2" onclick="answer('answer_2')">
                             Antwort
                         </div>
                     </div>
                     <div class="card mb-3 pointer">
-                        <div class="card-body answer">
+                        <div class="card-body answer" id="answer_3" onclick="answer('answer_3')">
                             Antwort
                         </div>
                     </div>
                     <div class="card mb-3 pointer">
-                        <div class="card-body answer">
+                        <div class="card-body answer" id="answer_4" onclick="answer('answer_4')">
                             Antwort
                         </div>
                     </div>
 
                     <div class="question-footer">
-                        <img src="img/arrowLeft.png">
-                        <img src="img/arrowRight.png">
+                        <!-- <img src="img/arrowLeft.png" role="button"> -->
+                        <div>
+                            <b id="question-number">1</b> von <b id="all-questions">5</b> Fragen
+                        </div>
+                        <button class="btn btn-danger" id="next-button" onclick="nextQuestion()" disabled><img src="img/arrowRight.png" role="button"></button>
                     </div>
 
 

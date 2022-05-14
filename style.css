@@ -3,8 +3,6 @@ body {
 }
 
 .bg {
-    /* background-color: black; */
-    background-color: black;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,12 +28,21 @@ body {
     cursor: pointer;
 }
 
+.bg-green {
+    background-color: rgba(0, 200, 0, 0.5) !important;
+}
+
+.bg-red {
+    background-color: rgba(200, 0, 0, 0.5) !important;
+}
+
 
 /****************question card****************/
 
 .question-footer {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .question-footer img {
@@ -43,15 +50,15 @@ body {
 }
 
 .card-title {
-    margin-bottom: 4.5rem;
+    margin-bottom: 20px;
     text-align: center;
 }
 
 .card {
-    max-width: 900px;
+    max-width: 653px;
     background-color: transparent;
     color: red;
-    border: 2px solid rgb(255, 215, 0, 0.4);
+    border: 2px solid black;
     text-align: center;
 }
 
@@ -64,7 +71,8 @@ body {
 
 .bg-container {
     position: relative;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(50, 50, 50, 0.6);
+    border: 4px solid black !important;
 }
 
 .categoriesCont {
@@ -83,6 +91,10 @@ body {
 
 .answer:hover {
     background-color: rgba(255, 215, 0, 0.3);
+}
+
+.btn-danger {
+    background-color: red;
 }
 
 
