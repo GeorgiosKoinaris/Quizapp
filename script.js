@@ -145,21 +145,38 @@ let questions = [{
 ];
 
 let currentQuestion = 0;
+let rightQuestions = 0;
+let AUDIO_SUCCESS = new Audio('audio/success.mp3');
+let AUDIO_FAIL = new Audio('audio/fail.mp3');
+
+
+
 
 function init() {
     document.getElementById('all-questions').innerHTML = questions.length;
     showQuestion();
 }
 
+////////////////////////////shows question or last page of quiz/////////////////////////
 function showQuestion() {
 
     if (currentQuestion >= questions.length) {
+        //show End Screen//
         document.getElementById('end-screen').style = "";
         document.getElementById('question-body').style = "display:none";
-    } else {
+
+        document.getElementById('amount-of-questions').innerHTML = questions.length;
+        document.getElementById('amount-of-right-questions').innerHTML = rightQuestions;
+    } else { //show Question//
+
+        //progress bar calculate percentage//
+        let percent = (currentQuestion + 1) / questions.length;
+        percent = Math.round(percent * 100);
+
+        document.getElementById('progress-bar').innerHTML = `${percent} %`
+        document.getElementById('progress-bar').style = `width: ${percent}%;`;
 
         let question = questions[currentQuestion];
-
 
         document.getElementById('question-number').innerHTML = currentQuestion + 1;
         document.getElementById('questionText').innerHTML = question['question'];
@@ -171,6 +188,7 @@ function showQuestion() {
     }
 }
 
+////////////////////////////select the categories for question//////////////////////////
 function selectCategory() {
     let question = questions[currentQuestion];
     document.getElementById('category-2').innerHTML = '';
@@ -183,34 +201,34 @@ function selectCategory() {
     }
 }
 
-
+////////////////////////////function for animated answer///////////////////////////////
 function answer(selection) {
     let question = questions[currentQuestion];
     let selectedAnswer = selection.slice(-1);
 
     let idOfRightAnswer = `answer_${question['right_answer']}`;
 
-    if (selectedAnswer == question['right_answer']) {
+    if (selectedAnswer == question['right_answer']) { //Richtige Frage beantwortet//
         document.getElementById(selection).parentNode.classList.add('bg-green');
+        AUDIO_SUCCESS.play();
+        rightQuestions++;
     } else {
         document.getElementById(selection).parentNode.classList.add('bg-red');
         document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-green');
+        AUDIO_FAIL.play();
     }
     document.getElementById('next-button').disabled = false;
 }
 
-
-
+////////////////////////////shows the next question//////////////////////////////////
 function nextQuestion() {
     currentQuestion++;
     document.getElementById('next-button').disabled = true;
     resetAnswerButtons()
     showQuestion();
-
-
-
 }
 
+////////////////////////////resets the background of answerbuttons///////////////////
 function resetAnswerButtons() {
     document.getElementById('next-button').disabled = true;
     document.getElementById('answer_1').parentNode.classList.remove('bg-green');
@@ -221,4 +239,14 @@ function resetAnswerButtons() {
     document.getElementById('answer_3').parentNode.classList.remove('bg-red');
     document.getElementById('answer_4').parentNode.classList.remove('bg-green');
     document.getElementById('answer_4').parentNode.classList.remove('bg-red');
+}
+
+
+////////////////////////////restart game////////////////////////////////////////////
+function restartGame() {
+    document.getElementById('end-screen').style = 'display:none'; //end-screen wieder ausblenden//
+    document.getElementById('question-body').style = ''; //question--body wieder einblenden//
+    currentQuestion = 0;
+    rightQuestions = 0;
+    init();
 }

@@ -17,9 +17,10 @@
 
         <!--------------------end screen------------------------->
         <div id="end-screen" style="display:none">
-            <div>Quiz beendet</div>
-            <div>Eventuell Bild</div>
-            <div>Du hast <b>XXX</b> von <b>XXX</b> Fragen richtig beantwortet</div>
+            <div class="big-font"><b>Quiz beendet!</b></div>
+            <div><img src="img/trophy.jpg" class="img-cover"></div>
+            <div>Du hast <b id="amount-of-right-questions">XXX</b> von <b id="amount-of-questions">XXX</b> Fragen richtig beantwortet</div>
+            <button class="btn btn-danger margin-tb" onclick="restartGame()">Quiz Wiederholen</button>
 
 
         </div>
@@ -66,6 +67,11 @@
                         </div>
                     </div>
 
+                    <!--progressbar-->
+                    <div class="progress margin-tb">
+                        <div class="progress-bar bg-warning" role="progressbar" id="progress-bar" style="width: 0%;">25%</div>
+                    </div>
+
                     <div class="question-footer">
                         <!-- <img src="img/arrowLeft.png" role="button"> -->
                         <div>
@@ -74,7 +80,10 @@
                         <button class="btn btn-danger" id="next-button" onclick="nextQuestion()" disabled><img src="img/arrowRight.png" role="button"></button>
                     </div>
 
-
+                    <!--progressbar-->
+                    <div class="progress margin-tb">
+                        <div class="progress-bar bg-warning" role="progressbar" id="progress-bar" style="width: 0%;">25%</div>
+                    </div>
 
                 </div>
             </div>

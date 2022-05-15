@@ -28,6 +28,20 @@ body {
     display: flex;
 }
 
+.margin-tb {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.img-cover {
+    width: 100%;
+    object-fit: cover;
+}
+
+.big-font {
+    font-size: 32px;
+}
+
 .pointer {
     cursor: pointer;
 }
@@ -110,11 +124,25 @@ body {
     background-color: red;
 }
 
+.progress {
+    background-color: transparent;
+}
+
+.progress-bar {
+    color: black;
+}
+
 
 /*********Media***************/
 
 @media (max-width: 767px) {
     .categoriesCont {
         border-bottom: 2px solid rgb(255, 215, 0, 0.4);
+    }
+}
+
+@media (max-width: 660px) {
+    .q-container {
+        min-width: auto;
     }
 }
