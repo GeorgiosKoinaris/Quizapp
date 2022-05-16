@@ -217,7 +217,7 @@ function answer(selection) {
 
     let idOfRightAnswer = `answer_${question['right_answer']}`;
 
-    if (rightAnswerSelected(selectedAnswer, question)) { //Richtige Frage beantwortet//
+    if (rightAnswerSelected(selectedAnswer, question)) {
         document.getElementById(selection).parentNode.classList.add('bg-green');
         AUDIO_SUCCESS.play();
         rightQuestions++;
